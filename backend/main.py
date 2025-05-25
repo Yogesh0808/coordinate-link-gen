@@ -106,3 +106,16 @@ async def extract_coordinates(
 
     else:
         return JSONResponse(status_code=400, content={"error": "Provide either image or both latitude and longitude."})
+
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+import os
+
+# Mount /static to serve static files if needed (e.g., CSS, JS, images)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Serve the index.html for root route
+@app.get("/")
+async def root():
+    return FileResponse(os.path.join("static", "index.html"))

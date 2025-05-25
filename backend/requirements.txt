@@ -1,5 +1,5 @@
 fastapi
 uvicorn
 pytesseract
-opencv-python
+opencv-python-headless
 numpy
