@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: geo-backend
+    env: docker
+    repo: https://github.com/Yogesh0808/coordinate-lin-gen
+    dockerfilePath: backend/Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8000
