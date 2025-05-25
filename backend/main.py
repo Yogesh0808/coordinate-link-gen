@@ -19,7 +19,8 @@ app.add_middleware(
 )
 
 # If tesseract is not in PATH
-pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+#pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+# Not needed for Production Builds (Docker file will take care of this.)
 
 def dms_to_decimal(dms_str: str) -> Optional[float]:
     # More flexible regex for DMS strings
